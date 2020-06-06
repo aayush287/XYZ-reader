@@ -2,6 +2,9 @@ package com.example.xyzreader.ui;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -139,14 +142,20 @@ public class ArticleListActivity extends AppCompatActivity implements
         }
 
         @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
             View view = getLayoutInflater().inflate(R.layout.list_item_article, parent, false);
+            final Context mContext = parent.getContext();
             final ViewHolder vh = new ViewHolder(view);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Bundle bundle = ActivityOptions
+                            .makeSceneTransitionAnimation((Activity) mContext,
+                                    vh.thumbnailView,
+                                    vh.thumbnailView.getTransitionName())
+                            .toBundle();
                     startActivity(new Intent(Intent.ACTION_VIEW,
-                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
+                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))), bundle);
                 }
             });
             return vh;

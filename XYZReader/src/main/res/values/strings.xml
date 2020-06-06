@@ -10,5 +10,6 @@
     <string name="up">Up</string>
     <string name="image_content_description">Image</string>
     <string name="detail_photo_description">Detail Screen Photo</string>
+    <string name="transition_photo">Transition Photo</string>
 
 </resources>
