@@ -16,7 +16,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
         android:orientation="vertical">
 
         <!--suppress AndroidLintContentDescription -->
@@ -25,8 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:background="@color/photo_placeholder"
-            android:scaleType="centerCrop"
-            android:transitionName="@string/transition_photo"/>
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/article_title"
@@ -53,8 +51,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingBottom="16dp"
-            android:textColor="@android:color/secondary_text_light_nodisable"
-            />
+            android:textColor="@android:color/secondary_text_light_nodisable" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

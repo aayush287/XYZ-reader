@@ -27,7 +27,7 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
-    <style name="ActionBar">
+    <style name="ActionBar" parent="Theme.Bacon">
         <item name="android:backgroundTint">@color/theme_primary</item>
     </style>
 

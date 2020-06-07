@@ -8,9 +8,8 @@
         android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/theme_primary"
         android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+        style="@style/ActionBar">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
@@ -20,7 +19,6 @@
             app:title="@string/app_name">
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
-                style="@style/ActionBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_gravity="bottom"
@@ -35,15 +33,17 @@
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:clipToPadding="false"
-        android:scrollbarStyle="outsideOverlay"
-        android:paddingTop="116dp"
         android:paddingLeft="@dimen/list_side_margin"
+        android:paddingTop="8dp"
         android:paddingRight="@dimen/list_side_margin"
-        android:paddingBottom="28dp" />
+        android:paddingBottom="28dp"
+        android:scrollbarStyle="outsideOverlay"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
